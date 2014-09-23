@@ -63,5 +63,4 @@ def grade_to_gpa(grade):
         gpa = 4.0
 
     return gpa
-#additional comment
-#useless print statement print ("word")
+
