@@ -44,23 +44,74 @@ def grade_to_gpa(grade):
     gpa = 0.0
 
     if type(grade) is str:
-        print ("letter") # remove this line once the code is implemented
-        # check that the grade is one of the accepted values
-        # assign grade to letter_grade
+        if grade == "A+" or grade == "A" or grade == "A-" or grade == "B+" or grade == "B" or grade == "B-" or grade == "C+" or grade == "C" or grade == "C-" or grade == "D+" or grade == "D-" or grade == "D" or grade == "FZ":
+            letter_grade = grade
+        else:
+            raise ValueError("Invalid value passed as parameter")
     elif type(grade) is int:
-        print("mark") # remove this line once the code is implemented
-        # check that grade is in the accepted range
-        # convert the numeric grade to a letter grade
-        # assign the value to letter_grade
-        # hint: letter_grade = mark_to_letter(grade)
+        if 100 >= grade >= 0:
+            letter_grade = mark_to_letter(grade)
+        else:
+            raise ValueError("Invalid value passed as parameter")
     else:
-        # raise a TypeError exception
         raise TypeError("Invalid type passed as parameter")
 
-    # write a long if-statement to convert letter_grade
-    # assign the value to gpa
-    if letter_grade == "A":
+    if letter_grade == "A+":
         gpa = 4.0
+    elif letter_grade == "A":
+        gpa = 4.0
+    elif letter_grade == "A-":
+        gpa = 3.7
+    elif letter_grade == "B+":
+        gpa = 3.3
+    elif letter_grade == "B":
+        gpa = 3.0
+    elif letter_grade == "B-":
+        gpa = 2.7
+    elif letter_grade == "C+":
+        gpa = 2.3
+    elif letter_grade == "C":
+        gpa = 2.0
+    elif letter_grade == "C-":
+        gpa = 1.7
+    elif letter_grade == "D+":
+        gpa = 1.3
+    elif letter_grade == "D":
+        gpa = 1.0
+    elif letter_grade == "D-":
+        gpa = 0.7
+    else:
+        gpa = 0.0
 
     return gpa
 
+
+def mark_to_letter(grade):
+    if grade >= 90:
+        letter = "A+"
+    elif grade >= 85:
+        letter = "A"
+    elif grade >= 80:
+        letter = "A-"
+    elif grade >= 77:
+        letter = "B+"
+    elif grade >= 73:
+        letter = "B"
+    elif grade >= 70:
+        letter = "B-"
+    elif grade >= 67:
+        letter = "C+"
+    elif grade >= 63:
+        letter = "C"
+    elif grade >= 60:
+        letter = "C-"
+    elif grade >= 57:
+        letter = "D+"
+    elif grade >= 53:
+        letter = "D"
+    elif grade >= 50:
+        letter = "D-"
+    else:
+        letter = "FZ"
+
+    return letter
