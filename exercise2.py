@@ -17,7 +17,7 @@ __status__ = "Prototype"
 # imports one per line
 
 
-def checksum (upc):
+def checksum(upc):
     """
     Checks if the digits in a UPC is consistent with checksum
 
@@ -26,23 +26,28 @@ def checksum (upc):
         Boolean: True, checksum is correct
         False, otherwise
     :raises:
-        TypeError if input is not a strong
+        TypeError if input is not a string
         ValueError if string is the wrong length (with error string stating how many digits are over or under
     """
+    check_sum = 0
+    if type(upc) is not str:
+        raise TypeError("Invalid type passed as parameter")
+    elif len(upc) != 12:
+        raise ValueError("Invalid value passed as parameter")
+    else:
+        digits = list(upc)
+        for i in range(0, 11):
+            if i % 2 != 0:
+                check_sum += int(digits[i])
+            else:
+                check_sum += int(digits[i])*3
+        check_sum %= 10
+        check_sum = 10 - check_sum
+        check_sum %= 10
+        if check_sum == int(digits[11]):
+            return True
+        else:
+            return False
 
-    # check type of input
-    # raise TypeError if not string
 
-    # check length of string
-    # raise ValueError if not 12
-
-    # convert string to array
-    # hint: use the list function
-
-    # generate checksum using the first 11 digits provided
-    # check against the the twelfth digit
-
-    # return True if they are equal, False otherwise
-
-    return False
 

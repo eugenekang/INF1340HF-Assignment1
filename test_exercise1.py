@@ -12,7 +12,7 @@ __status__ = "Prototype"
 
 # imports one per line
 import pytest
-from exercise1 import grade_to_gpa
+from exercise1 import *
 
 
 def test_letter_grade():
@@ -21,15 +21,15 @@ def test_letter_grade():
     """
     assert grade_to_gpa("A+") == 4.0
     assert grade_to_gpa("A") == 4.0
-    assert grade_to_gpa("A-") == 4.0
-    assert grade_to_gpa("B+") == 4.0
-    assert grade_to_gpa("B") == 4.0
-    assert grade_to_gpa("B-") == 4.0
-    assert grade_to_gpa("FZ") == 4.0
+    assert grade_to_gpa("A-") == 3.7
+    assert grade_to_gpa("B+") == 3.3
+    assert grade_to_gpa("B") == 3.0
+    assert grade_to_gpa("B-") == 2.7
+    assert grade_to_gpa("FZ") == 0.0
     
     with pytest.raises(ValueError):
         grade_to_gpa("q")
-    # add more tests for invalid values
+        grade_to_gpa("sql")
 
 
 def test_percentage_grade():
@@ -60,7 +60,7 @@ def test_percentage_grade():
     assert grade_to_gpa(71) == 2.7
     assert grade_to_gpa(70) == 2.7
 
-    assert grade_to_gpa(69) == 0.0
+    assert grade_to_gpa(69) == 2.3
     assert grade_to_gpa(37) == 0.0
     assert grade_to_gpa(0) == 0.0
 
@@ -75,5 +75,8 @@ def test_float_input():
     """
     with pytest.raises(TypeError):
         grade_to_gpa(82.5)
+        grade_to_gpa(34.7)
 
-# add functions for any other tests
+test_letter_grade()
+test_percentage_grade()
+test_float_input()
