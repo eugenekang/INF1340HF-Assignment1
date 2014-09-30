@@ -85,9 +85,6 @@ def grade_to_gpa(grade):
 
     return gpa
 
-<<<<<<< HEAD
-=======
-
 def mark_to_letter(grade):
     if grade >= 90:
         letter = "A+"
@@ -117,4 +114,3 @@ def mark_to_letter(grade):
         letter = "FZ"
 
     return letter
->>>>>>> origin/master
