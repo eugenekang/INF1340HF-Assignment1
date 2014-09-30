@@ -11,10 +11,10 @@ Example:
 
 """
 
-__author__ = 'Susan Sim'
-__email__ = "ses@drsusansim.org"
+__author__ = 'Susan Sim' 'Archon Ren' 'Eugene Kang'
+__email__ = "ses@drsusansim.org" "archon.ren@gmail.com" "eugene.yc.kang@gmail.com"
 
-__copyright__ = "2014 Susan Sim"
+__copyright__ = "2014 Kang, Ren & Sim"
 __license__ = "MIT License"
 
 __status__ = "Prototype"
@@ -49,16 +49,15 @@ def grade_to_gpa(grade):
         else:
             raise ValueError("Invalid value passed as parameter")
     elif type(grade) is int:
-        if 100 >= grade >= 0:
+        #Must break up into 2 selection statements, you cannot say "100>=grade>=0, though it would be easier!
+        if grade >= 0 and grade <=100:
             letter_grade = mark_to_letter(grade)
         else:
             raise ValueError("Invalid value passed as parameter")
     else:
         raise TypeError("Invalid type passed as parameter")
-
-    if letter_grade == "A+":
-        gpa = 4.0
-    elif letter_grade == "A":
+    # I combined the A+ and A selection statements since they result in the same value.
+    if letter_grade == "A+" or letter_grade == "A":
         gpa = 4.0
     elif letter_grade == "A-":
         gpa = 3.7
@@ -87,7 +86,7 @@ def grade_to_gpa(grade):
 
 <<<<<<< HEAD
 =======
-
+#Do we need this structure if we are going to all convert to GPA anyways?
 def mark_to_letter(grade):
     if grade >= 90:
         letter = "A+"

@@ -6,10 +6,10 @@
     Assignment 1, Exercise 2, INF1340 Fall 2014
 """
 
-__author__ = 'Susan Sim'
-__email__ = "ses@drsusansim.org"
+__author__ = 'Susan Sim' 'Archon Ren' 'Eugene Kang'
+__email__ = "ses@drsusansim.org" "archon.ren@gmail.com" "eugene.yc.kang@gmail.com"
 
-__copyright__ = "2014 Susan Sim"
+__copyright__ = "2014 Kang, Ren & Sim"
 __license__ = "MIT License"
 
 __status__ = "Prototype"
@@ -36,6 +36,7 @@ def checksum(upc):
         raise ValueError("Invalid value passed as parameter")
     else:
         digits = list(upc)
+        #Well built loop structure, really good use of the i increment
         for i in range(0, 11):
             if i % 2 != 0:
                 check_sum += int(digits[i])
