@@ -6,10 +6,10 @@
     Assignment 1, Exercise 2, INF1340 Fall 2014
 """
 
-__author__ = 'Susan Sim' 'Archon Ren' 'Eugene Kang'
-__email__ = "ses@drsusansim.org" "archon.ren@gmail.com" "eugene.yc.kang@gmail.com"
+__author__ = 'Susan Sim'
+__email__ = "ses@drsusansim.org"
 
-__copyright__ = "2014 Kang, Ren & Sim"
+__copyright__ = "2014 Susan Sim"
 __license__ = "MIT License"
 
 __status__ = "Prototype"
