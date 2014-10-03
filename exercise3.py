@@ -22,29 +22,30 @@ def decide_rps(player1, player2):
         TypeError if input is not string
         ValueError if string is not Rock or Paper or Scissors
     """
-    #Defining the Rock, Paper, Scissors "scoring" dictionary
-    rps_Dictionary = {}
-
-    rps_Dictionary[("Scissors", "Scissors")] = 0
-    rps_Dictionary[("Rock", "Rock")] = 0
-    rps_Dictionary[("Paper", "Paper")] = 0
-
-    rps_Dictionary[("Scissors", "Paper")] = 1
-    rps_Dictionary[("Paper", "Rock")] = 1
-    rps_Dictionary[("Rock", "Scissors")] = 1
-
-    rps_Dictionary[("Scissors", "Rock")] = 2
-    rps_Dictionary[("Paper", "Scissors")] = 2
-    rps_Dictionary[("Rock", "Paper")] = 2
-
-    #Function that trips errors if wrong input is entered, also returns result.
-    if type(player1) is not str or type(player2) is not str:
-        raise TypeError("Invalid type passed as parameter")
-    elif player2 == "Rock" or player2 == "Paper" or player2 == "Scissors":
-        if player1 == "Rock" or player1 == "Paper" or player1 == "Scissors":
-            return rps_Dictionary[(player1, player2)]
+    if type(player1) is str and type(player2) is str:
+        if player1.upper() == "ROCK" or player1.upper() == "PAPER" or player1.upper() == "SCISSORS":
+            if player2.upper() == "ROCK" or player2.upper() == "PAPER" or player2.upper() == "SCISSORS":
+                return rps_Dictionary[(player1.upper(), player2.upper())]
+            else:
+                raise ValueError("Invalid Value for Player 2. Please enter ROCK, PAPER, or SCISSORS")
         else:
-                raise ValueError("Invalid value passed as parameter")
+            raise ValueError("Invalid Value for Player 1. Please enter ROCK, PAPER, or SCISSORS")
     else:
-        raise ValueError("Invalid value passed as parameter")
+        raise TypeError("Invalid type. Please enter a string.")
+
+#Defining the Rock, Paper, Scissors "scoring" dictionary
+rps_Dictionary = {}
+
+rps_Dictionary[("SCISSORS", "SCISSORS")] = 0
+rps_Dictionary[("ROCK", "ROCK")] = 0
+rps_Dictionary[("PAPER", "PAPER")] = 0
+
+rps_Dictionary[("SCISSORS", "PAPER")] = 1
+rps_Dictionary[("PAPER", "ROCK")] = 1
+rps_Dictionary[("ROCK", "SCISSORS")] = 1
+
+rps_Dictionary[("SCISSORS", "ROCK")] = 2
+rps_Dictionary[("PAPER", "SCISSORS")] = 2
+rps_Dictionary[("ROCK", "PAPER")] = 2
+
 
