@@ -10,7 +10,7 @@ __status__ = "Prototype"
 
 def decide_rps(player1, player2):
     """
-    Checks who wins the rock paper scissors game
+    Determines who wins the rock paper scissors game
 
     :param player1: move of the first player
            player2: move of the second player

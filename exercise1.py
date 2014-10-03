@@ -24,7 +24,7 @@ def grade_to_gpa(grade):
     Returns the UofT Graduate GPA for a given grade.
 
     :param:
-        grade (integer or string): Grade to be converted
+        grade (integer or string): Grades to be converted
             If integer, accepted values are 0-100.
             If string, accepted values are A+, A, A-, B+, B, B-, FZ
 
