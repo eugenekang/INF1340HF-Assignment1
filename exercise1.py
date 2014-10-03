@@ -19,9 +19,6 @@ __license__ = "MIT License"
 
 __status__ = "Prototype"
 
-# imports one per line
-
-
 def grade_to_gpa(grade):
     """
     Returns the UofT Graduate GPA for a given grade.
@@ -44,19 +41,17 @@ def grade_to_gpa(grade):
     gpa = 0.0
 
     if type(grade) is str:
-        if grade == "A+" or grade == "A" or grade == "A-" or grade == "B+" or grade == "B" or grade == "B-" or grade == "C+" or grade == "C" or grade == "C-" or grade == "D+" or grade == "D-" or grade == "D" or grade == "FZ":
+        if grade == "A+" or grade == "A" or grade == "A-" or grade == "B+" or grade == "B" or grade == "B-" or grade == "FZ":
             letter_grade = grade
         else:
-            raise ValueError("Invalid value passed as parameter")
+            raise ValueError("Invalid Value. Please enter a letter grade from A+ to B-, or FZ")
     elif type(grade) is int:
-        #Must break up into 2 selection statements, you cannot say "100>=grade>=0, though it would be easier!
         if grade >= 0 and grade <=100:
             letter_grade = mark_to_letter(grade)
         else:
-            raise ValueError("Invalid value passed as parameter")
+            raise ValueError("Value entered is out of range")
     else:
-        raise TypeError("Invalid type passed as parameter")
-    # I combined the A+ and A selection statements since they result in the same value.
+        raise TypeError("Invalid type passed as parameter. Please enter an numeric, integer grade or letter grade")
     if letter_grade == "A+" or letter_grade == "A":
         gpa = 4.0
     elif letter_grade == "A-":
@@ -67,27 +62,24 @@ def grade_to_gpa(grade):
         gpa = 3.0
     elif letter_grade == "B-":
         gpa = 2.7
-    elif letter_grade == "C+":
-        gpa = 2.3
-    elif letter_grade == "C":
-        gpa = 2.0
-    elif letter_grade == "C-":
-        gpa = 1.7
-    elif letter_grade == "D+":
-        gpa = 1.3
-    elif letter_grade == "D":
-        gpa = 1.0
-    elif letter_grade == "D-":
-        gpa = 0.7
     else:
         gpa = 0.0
 
     return gpa
 
-<<<<<<< HEAD
-=======
-#Do we need this structure if we are going to all convert to GPA anyways?
+
 def mark_to_letter(grade):
+    """
+    Returns the UofT Letter Grade for a given integer grade.
+
+    :param:
+        grade (integer): Grade to be converted
+            Accepted values are 0-100.
+
+    :return:
+        string: The equivalent letter Grade
+            Value is A+, A, A-, B+, B, B-, FZ
+    """
     if grade >= 90:
         letter = "A+"
     elif grade >= 85:
@@ -100,20 +92,8 @@ def mark_to_letter(grade):
         letter = "B"
     elif grade >= 70:
         letter = "B-"
-    elif grade >= 67:
-        letter = "C+"
-    elif grade >= 63:
-        letter = "C"
-    elif grade >= 60:
-        letter = "C-"
-    elif grade >= 57:
-        letter = "D+"
-    elif grade >= 53:
-        letter = "D"
-    elif grade >= 50:
-        letter = "D-"
     else:
         letter = "FZ"
 
     return letter
->>>>>>> origin/master
+

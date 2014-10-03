@@ -60,7 +60,7 @@ def test_percentage_grade():
     assert grade_to_gpa(71) == 2.7
     assert grade_to_gpa(70) == 2.7
 
-    assert grade_to_gpa(69) == 2.3
+    assert grade_to_gpa(69) == 0.0
     assert grade_to_gpa(37) == 0.0
     assert grade_to_gpa(0) == 0.0
 

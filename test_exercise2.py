@@ -14,7 +14,7 @@ __status__ = "Prototype"
 
 # imports one per line
 import pytest
-from exercise2 import checksum
+from exercise2 import *
 
 
 def test_checksum():
@@ -39,7 +39,7 @@ def test_input():
 
     with pytest.raises(ValueError):
         checksum("1")
-        checksum("1234567890")
+        checksum("123456789023")
         checksum("dejection")
 
 

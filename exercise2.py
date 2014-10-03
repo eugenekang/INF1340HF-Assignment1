@@ -33,10 +33,12 @@ def checksum(upc):
     if type(upc) is not str:
         raise TypeError("Invalid type passed as parameter")
     elif len(upc) != 12:
-        raise ValueError("Invalid value passed as parameter")
+        if len(upc) < 12:
+            raise ValueError("Your UPC is " + str(12-len(upc)) + " digits too short.")
+        if len(upc) > 12:
+            raise ValueError("Your UPC is " + str(len(upc)-12) + " digits too long.")
     else:
         digits = list(upc)
-        #Well built loop structure, really good use of the i increment
         for i in range(0, 11):
             if i % 2 != 0:
                 check_sum += int(digits[i])
