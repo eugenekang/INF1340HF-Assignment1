@@ -21,7 +21,7 @@ __status__ = "Prototype"
 
 def grade_to_gpa(grade):
     """
-    Returns the UofT Graduate GPA for a given grade.
+    Return the UofT Graduate GPA for a given grade.
 
     :param:
         grade (integer or string): Grades to be converted
